@@ -17,8 +17,7 @@ get_latest_commit (){
 compare_the_commits () {
         if [ "`cat $FILE`" = "`get_latest_commit $1`" ]
         then
-            #echo "There are no changes in $1 repo"
-            j=n
+            echo "There are no changes in $1 repo"
         else
             STATUS=changed
             get_latest_commit $1 > $FILE
@@ -47,7 +46,7 @@ do
            #echo "$job"
            echo "$job" > /tmp/jobname.txt
            #export job="prakash"
-           #echo "There are changes in $i repo"
+           echo "There are changes in $i repo"
        fi
     fi
 done
