@@ -42,10 +42,10 @@ do
         then
            URL=https://github.com/Prakashreddy134/test/blob/master/test.txt
            job=test-deploy-job
-           echo "$URL"
+           #echo "$URL"
            echo "$job"
-           export job="prakash"
-           echo "There are changes in $i repo"
+           #export job="prakash"
+           #echo "There are changes in $i repo"
        fi
     fi
 done
