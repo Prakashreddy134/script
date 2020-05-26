@@ -25,7 +25,7 @@ compare_the_commits () {
 }
 
 main () {
-export job="prakash"
+export name="prakash"
 for i in $REPO_LIST
 do
     FILE=/tmp/${i}_latest_commit.txt
