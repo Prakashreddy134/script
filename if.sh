@@ -43,6 +43,7 @@ do
            job=test-deploy-job
            echo "$URL"
            echo "$job"
+           export job=$job
            echo "There are changes in $i repo"
        fi
     fi
