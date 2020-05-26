@@ -44,7 +44,8 @@ do
            URL=https://github.com/Prakashreddy134/test/blob/master/test.txt
            job=test-deploy-job
            #echo "$URL"
-           echo "$job"
+           #echo "$job"
+           echo "$job" > /tmp/jobname.txt
            #export job="prakash"
            #echo "There are changes in $i repo"
        fi
