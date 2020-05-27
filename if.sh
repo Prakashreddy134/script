@@ -6,7 +6,7 @@ REPO_LIST="ssh repo_jan test"
 
 get_latest_commit (){
     REPO_NAME=$1
-    curl https://api.github.com/repos/Prakashreddy134/$REPO_NAME/commits/master | \
+    curl -s https://api.github.com/repos/Prakashreddy134/$REPO_NAME/commits/master | \
         grep sha | \
         awk '{print $2}'| \
         sed -n '1'p | \
