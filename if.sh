@@ -17,7 +17,8 @@ get_latest_commit (){
 compare_the_commits () {
         if [ "`cat $FILE`" = "`get_latest_commit $1`" ]
         then
-            echo "There are no changes in $1 repo"
+           # echo "There are no changes in $1 repo"
+           j=0
         else
             STATUS=changed
             get_latest_commit $1 > $FILE
@@ -43,7 +44,7 @@ do
            job=test-deploy-job
            #echo "$URL"
            echo "$job"
-           echo "$job" > /tmp/jobname.txt
+          # echo "$job" > /tmp/jobname.txt
            #export job="prakash"
            #echo "There are changes in $i repo"
        fi
