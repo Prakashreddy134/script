@@ -29,7 +29,7 @@ main () {
 ARRAY=()
 for i in $REPO_LIST
 do
-    FILE=${i}_latest_commit.txt
+    FILE=/var/lib/jenkins/${i}_latest_commit.txt
     if [ ! -f $FILE ]
     then
         touch $FILE
