@@ -17,8 +17,8 @@ get_latest_commit (){
 compare_the_commits () {
         if [ "`cat $FILE`" = "`get_latest_commit $1`" ]
         then
-           # echo "There are no changes in $1 repo"
-           j=0
+            #echo "There are no changes in $1 repo"
+                        j=0
         else
             STATUS=changed
             get_latest_commit $1 > $FILE
@@ -26,6 +26,7 @@ compare_the_commits () {
 }
 
 main () {
+ARRAY=()
 for i in $REPO_LIST
 do
     FILE=/tmp/${i}_latest_commit.txt
@@ -42,14 +43,32 @@ do
         then
            URL=https://github.com/Prakashreddy134/test/blob/master/test.txt
            job=test-deploy-job
+           ARRAY+=("$job")
+          # echo "$URL"
+           #echo "$job"
+          # echo "There are changes in $i repo"
+        elif [ "$i" = "repo_jan" ]
+        then
+           URL=https://github.com/Prakashreddy134/repo_jan/blob/master/test.txt
+           job=repo_jan
+           ARRAY+=("$job")
            #echo "$URL"
-           echo "$job"
-          # echo "$job" > /tmp/jobname.txt
-           #export job="prakash"
+           #echo "$job"
            #echo "There are changes in $i repo"
+       elif [ "$i" = "ssh" ]
+        then
+           URL=https://github.com/Prakashreddy134/ssh/blob/master/test.txt
+           job=ssh
+           ARRAY+=("$job")
+           #echo "$URL"
+          #echo "$job"
+       #echo "There are changes in $i repo"
        fi
+      STATUS=unchanged
     fi
 done
 }
+#echo "${ARRAY[*]}"
 
 main
+echo "${ARRAY[*]}"
