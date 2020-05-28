@@ -29,7 +29,7 @@ main () {
 ARRAY=()
 for i in $REPO_LIST
 do
-    FILE=/tmp/${i}_latest_commit.txt
+    FILE=${i}_latest_commit.txt
     if [ ! -f $FILE ]
     then
         touch $FILE
