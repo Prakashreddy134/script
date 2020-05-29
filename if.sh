@@ -2,7 +2,7 @@
 
 #set -x
 
-REPO_LIST="ABC ssh repo_jan test"
+REPO_LIST="ssh repo_jan test"
 
 get_latest_commit (){
     REPO_NAME=$1
@@ -64,13 +64,8 @@ do
            #echo "$URL"
           #echo "$job"
        #echo "There are changes in $i repo"
-       elif [ "$i" = "ABC" ]
-        then
-           URL=https://github.com/Prakashreddy134/ssh/blob/master/test.txt
-           job=ABC
-           ARRAY+=("$job")
        fi
-      STATUS=unchanged
+     STATUS=unchanged
     fi
 done
 }
