@@ -46,7 +46,7 @@ do
            ARRAY+=("$job")
           # echo "$URL"
            #echo "$job"
-          # echo "There are changes in $i repo"
+           echo "There are changes in $i repo"
         elif [ "$i" = "repo_jan" ]
         then
            URL=https://github.com/Prakashreddy134/repo_jan/blob/master/test.txt
@@ -54,7 +54,7 @@ do
            ARRAY+=("$job")
            #echo "$URL"
            #echo "$job"
-           #echo "There are changes in $i repo"
+           echo "There are changes in $i repo"
        elif [ "$i" = "ssh" ]
         then
            URL=https://github.com/Prakashreddy134/ssh/blob/master/test.txt
@@ -62,7 +62,7 @@ do
            ARRAY+=("$job")
            #echo "$URL"
           #echo "$job"
-       #echo "There are changes in $i repo"
+          echo "There are changes in $i repo"
        fi
       STATUS=unchanged
     fi
