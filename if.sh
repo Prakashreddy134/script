@@ -2,12 +2,11 @@
 
 #set -x
 
-REPO_LIST="ABC XYZ"
+REPO_LIST="ssh repo_jan test"
 
 get_latest_commit (){
     REPO_NAME=$1
-    #curl -s -u prakashreddy134:ec26b80c7159b9d5a42d48c358eff263d99ff8bf https://api.github.com/repos/Prakashreddy134/$REPO_NAME/commits/master | \
-    curl -s -u shanmukha511:42cfb4aa5cae146b22cd077175e9471944ba52d8 https://api.github.com/repos/shanmukha511/$REPO_NAME/commits/master | \
+    curl -s https://api.github.com/repos/Prakashreddy134/$REPO_NAME/commits/master | \
         grep sha | \
         awk '{print $2}'| \
         sed -n '1'p | \
@@ -40,7 +39,7 @@ do
 
     if [ "$STATUS" = "changed" ]
     then
-        if [ "$i" = "ABC" ]
+        if [ "$i" = "test" ]
         then
            URL=https://github.com/Prakashreddy134/test/blob/master/test.txt
            job=test-deploy-job
@@ -48,7 +47,7 @@ do
           # echo "$URL"
            #echo "$job"
           # echo "There are changes in $i repo"
-        elif [ "$i" = "XYZ" ]
+        elif [ "$i" = "repo_jan" ]
         then
            URL=https://github.com/Prakashreddy134/repo_jan/blob/master/test.txt
            job=repo_jan
