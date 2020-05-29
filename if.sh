@@ -18,7 +18,6 @@ compare_the_commits () {
         if [ "`cat $FILE`" = "`get_latest_commit $1`" ]
         then
             echo "There are no changes in $1 repo"
-                        j=0
         else
             STATUS=changed
             get_latest_commit $1 > $FILE
