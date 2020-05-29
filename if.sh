@@ -18,7 +18,7 @@ compare_the_commits () {
         if [ "`cat $FILE`" = "`get_latest_commit $1`" ]
         then
             #echo "There are no changes in $1 repo"
-            j=0
+                        j=0
         else
             STATUS=changed
             get_latest_commit $1 > $FILE
@@ -46,7 +46,7 @@ do
            ARRAY+=("$job")
           # echo "$URL"
            #echo "$job"
-           #echo "There are changes in $i repo"
+          # echo "There are changes in $i repo"
         elif [ "$i" = "repo_jan" ]
         then
            URL=https://github.com/Prakashreddy134/repo_jan/blob/master/test.txt
@@ -62,7 +62,7 @@ do
            ARRAY+=("$job")
            #echo "$URL"
           #echo "$job"
-          #echo "There are changes in $i repo"
+       #echo "There are changes in $i repo"
        fi
       STATUS=unchanged
     fi
