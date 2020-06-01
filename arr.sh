@@ -71,4 +71,4 @@ done
 #echo "${ARRAY[*]}"
 
 main
-echo "${ARRAY[*]}"
+echo "${ARRAY[*]}" > test.txt
