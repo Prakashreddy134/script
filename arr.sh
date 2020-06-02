@@ -71,4 +71,5 @@ done
 #echo "${ARRAY[*]}"
 
 main
+echo pwd
 echo "${ARRAY[*]}" > test.txt
