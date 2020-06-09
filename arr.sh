@@ -39,7 +39,7 @@ do
 
     if [ "$STATUS" = "changed" ]
     then
-        if [ "$i" = "test" ]
+        if [ "$i" = "job1" ]
         then
            URL=https://github.com/Prakashreddy134/job1/blob/master/test.txt
            job=job1
@@ -47,7 +47,7 @@ do
            echo "There are changes in $i repo"
            echo "The Git Repo URL: $URL"
            echo "The Job Name: $job"
-        elif [ "$i" = "repo_jan" ]
+        elif [ "$i" = "job2" ]
         then
            URL=https://github.com/Prakashreddy134/job2/blob/master/test.txt
            job=job2
@@ -55,7 +55,7 @@ do
            echo "There are changes in $i repo"
            echo "The Git Repo URL: $URL"
            echo "The Job Name: $job"
-       elif [ "$i" = "ssh" ]
+       elif [ "$i" = "job3" ]
         then
            URL=https://github.com/Prakashreddy134/job3/blob/master/test.txt
            job=job3
