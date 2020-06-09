@@ -2,7 +2,7 @@
 
 #set -x
 
-REPO_LIST="ssh repo_jan test"
+REPO_LIST="job1 job2 job3"
 
 get_latest_commit (){
     REPO_NAME=$1
