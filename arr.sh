@@ -41,35 +41,32 @@ do
     then
         if [ "$i" = "test" ]
         then
-           URL=https://github.com/Prakashreddy134/test/blob/master/test.txt
-           job=test-deploy-job
+           URL=https://github.com/Prakashreddy134/job1/blob/master/test.txt
+           job=job1
            ARRAY+=("$job")
+           echo "There are changes in $i repo"
            echo "The Git Repo URL: $URL"
            echo "The Job Name: $job"
-          # echo "There are changes in $i repo"
         elif [ "$i" = "repo_jan" ]
         then
-           URL=https://github.com/Prakashreddy134/repo_jan/blob/master/test.txt
-           job=repo_jan
+           URL=https://github.com/Prakashreddy134/job2/blob/master/test.txt
+           job=job2
            ARRAY+=("$job")
+           echo "There are changes in $i repo"
            echo "The Git Repo URL: $URL"
            echo "The Job Name: $job"
-           #echo "There are changes in $i repo"
        elif [ "$i" = "ssh" ]
         then
-           URL=https://github.com/Prakashreddy134/ssh/blob/master/test.txt
-           job=ssh
+           URL=https://github.com/Prakashreddy134/job3/blob/master/test.txt
+           job=job3
            ARRAY+=("$job")
+           echo "There are changes in $i repo"
            echo "The Git Repo URL: $URL"
            echo "The Job Name: $job"
-       #echo "There are changes in $i repo"
        fi
       STATUS=unchanged
     fi
 done
 }
-#echo "${ARRAY[*]}"
-
 main
-pwd
 echo "${ARRAY[*]}" > jobname.txt
