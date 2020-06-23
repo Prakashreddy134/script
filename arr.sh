@@ -42,7 +42,6 @@ main () {
 
         if [ "$STATUS" = "changed" ]
         then
-            echo $REPO_NAME $JOB_NAME $GIT_URL
             ARRAY+=("$JOB_NAME")
             echo "There are changes in $REPO_NAME repo"
             echo "The Git Repo URL: $GIT_URL"
