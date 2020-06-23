@@ -32,7 +32,7 @@ main () {
     while read REPO_NAME JOB_NAME GIT_URL
     do
 
-        FILE=/tmp/${REPO_NAME}_latest_commit.txt
+        FILE=/var/lib/jenkins/workspace/dev_config/${REPO_NAME}_latest_commit.txt
         if [ ! -f $FILE ]
         then
             touch $FILE
