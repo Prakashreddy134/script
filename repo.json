@@ -1,11 +1,11 @@
 {
    "repodetails": {
         "job1": {
-                "jobname": ["job1"],
+                "jobname": ["job1", "job3"],
                 "giturl": "job1.git"
         },
         "job2": {
-                "jobname": ["job2", "job3"],
+                "jobname": ["job2"],
                 "giturl": "job2.git"
         }
     }
