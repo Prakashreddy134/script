@@ -28,7 +28,7 @@ main () {
     ARRAY=()
     for i in $REPO_NAME
     do
-        JOB_NAME=$(jq -r  '.[]."'"$i"'" | .jobname | .[]' repo.json)
+        JOB_NAME=$(jq -r  '.[]."'"$i"'" | .jobname | reduce .[1:][] as $j ("\(.[0])"; . + " \($j)")' repo.json)
         GIT_URL=$(jq -r  '.[]."'"$i"'" | .giturl' repo.json)
         FILE=/var/lib/jenkins/workspace/dev_config/${i}_latest_commit.txt
         if [ ! -f $FILE ]
