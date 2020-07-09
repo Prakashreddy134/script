@@ -30,7 +30,7 @@ main () {
     do
         JOB_NAME=$(jq -r  '.[]."'"$i"'" | .jobname | .[]' repo.json)
         GIT_URL=$(jq -r  '.[]."'"$i"'" | .giturl' repo.json)
-        FILE=/tmp/${i}_latest_commit.txt
+        FILE=/var/lib/jenkins/workspace/dev_config/${i}_latest_commit.txt
         if [ ! -f $FILE ]
         then
             touch $FILE
