@@ -1,0 +1,54 @@
+node {
+    stage ('SCM') {  
+        cleanWs()
+     	git url: 'https://github.com/Prakashreddy134/dev_config.git'
+    }
+	
+	stage ('chmod') {
+	     sh '''
+	        chmod +x 1.sh
+	        chmod 777 azcopy
+	     '''
+	}
+	stage ('az-storage') {
+            
+            sh '''
+               keyctl new_session 
+               export AZCOPY_SPA_CLIENT_SECRET=""
+               echo $AZCOPY_SPA_CLIENT_SECRET
+               ./azcopy login --service-principal --application-id 8d1911dd-b83e-4ec6-b5fd-ecb628860c4b --tenant-id=513294a0-3e20-41b2-a970-6d30bf1546fa
+               ./azcopy copy 'https://multirepo.blob.core.windows.net/multirepo/job1_latest_commit.txt' './job1_latest_commit.txt'
+               ./azcopy copy 'https://multirepo.blob.core.windows.net/multirepo/job2_latest_commit.txt' './job2_latest_commit.txt'
+               ./azcopy copy 'https://multirepo.blob.core.windows.net/multirepo/job3_latest_commit.txt' './job3_latest_commit.txt' 
+            '''
+	}
+	
+	jobname1 = sh (script: './1.sh',returnStdout: true).trim()
+	jobname = sh (script: 'cat jobname.txt',returnStdout: true).trim()
+	   
+    stage ('Trigger Deploy') {
+            
+            sh '''
+               keyctl new_session 
+               export AZCOPY_SPA_CLIENT_SECRET=""
+               echo $AZCOPY_SPA_CLIENT_SECRET
+               ./azcopy login --service-principal --application-id 8d1911dd-b83e-4ec6-b5fd-ecb628860c4b --tenant-id=513294a0-3e20-41b2-a970-6d30bf1546fa
+               ./azcopy copy './job1_latest_commit.txt' 'https://multirepo.blob.core.windows.net/multirepo/job1_latest_commit.txt'
+               ./azcopy copy './job2_latest_commit.txt' 'https://multirepo.blob.core.windows.net/multirepo/job2_latest_commit.txt'
+               ./azcopy copy './job3_latest_commit.txt' 'https://multirepo.blob.core.windows.net/multirepo/job3_latest_commit.txt'
+            '''
+		  if("${jobname}"){
+		    println "${jobname1}"
+            String a ="${jobname}" ;
+            String[] str;
+            str = a.split(' ');
+            for( String values : str ) {
+                println "${values}"
+                build job: "${values}" 
+            }
+          }
+         else (
+             println ("There are no changes in the given repos")
+         )		
+    }
+}
