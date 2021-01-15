@@ -1,0 +1,94 @@
+{
+    "imagedetails": {
+        "alpine": {
+                "path": "alpine",
+                "imagename": "alpine",
+                "imageversion": "latest",
+                "build": "no"
+        },
+        "centos": {
+                "path": "centos",
+                "imagename": "centos",
+                "imageversion": "7",
+                "build": "no"
+        },
+        "hasura": {
+                "path": "hasura",
+                "imagename": "graphql-engine",
+                "imageversion": "1.3.2",
+                "build": "yes"
+        },
+        "node": {
+                "path": "node",
+                "imagename": "node",
+                "imageversion": "13.8.0-alpine",
+                "build": "no"
+        },
+        "postgres": {
+                "path": "postgres",
+                "imagename": "postgres",
+                "imageversion": "10.3",
+                "build": "no"
+        },
+        "rmq": {
+                "path": "rmg",
+                "imagename": "rabbitmq",
+                "imageversion": "3.7.11-management",
+                "build": "no"
+        },
+        "smtp": {
+                "path": "smtp",
+                "imagename": "smtp",
+                "imageversion": "latest",
+                "build": "no"
+        },
+        "sqlite": {
+                "path": "sqlite",
+                "imagename": "sqlite3",
+                "imageversion": "latest",
+                "build": "no"
+        },
+        "mysql": {
+                "path": "mysql",
+                "imagename": "mysql-server",
+                "imageversion": "5.7",
+                "build": "yes"
+        },
+        "python:3.6.12-0.0.1": {
+                "path": "python/python:3.6.12-0.0.1",
+                "imagename": "python",
+                "imageversion": "3.6.12-0.0.1",
+                "build": "no"
+        },
+        "python:3.6.5-airflow": {
+                "path": "python/python:3.6.5-airflow",
+                "imagename": "python",
+                "imageversion": "3.6.5-airflow",
+                "build": "no"
+        },
+        "python:3.6-debian-content": {
+                "path": "python/python:3.6-debian-content",
+                "imagename": "python",
+                "imageversion": "3.6-debian-content",
+                "build": "no"
+        },
+        "python:3.7.7-alpine3.11": {
+                "path": "python/python:3.7.7-alpine3.11",
+                "imagename": "python",
+                "imageversion": "3.7.7-alpine3.11",
+                "build": "no"
+        },
+        "python:3.8.2-0.0.1": {
+                "path": "python/python:3.8.2-0.0.1",
+                "imagename": "python",
+                "imageversion": "3.8.2-0.0.1",
+                "build": "no"
+        },
+        "alpine-azcopy": {
+                "path": "alpine-azcopy",
+                "imagename": "alpine-azcopy",
+                "imageversion": "latest",
+                "build": "yes"
+        }
+    }
+}
