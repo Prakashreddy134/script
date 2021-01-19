@@ -83,12 +83,6 @@
                 "imagename": "python",
                 "imageversion": "3.8.2-0.0.1",
                 "build": "no"
-        },
-        "alpine-azcopy": {
-                "path": "alpine-azcopy",
-                "imagename": "alpine-azcopy",
-                "imageversion": "latest",
-                "build": "yes"
         }
     }
 }
